@@ -1,0 +1,74 @@
+{
+  "tickets": [
+    {
+      "id": "1",
+      "title": "Fix broken footer links on the portal",
+      "body": "Several links in the footer (Support, Privacy Policy, and Terms) are returning 404 errors after the last deployment. The issue appears to be related to incorrect relative paths in the React build output. Please verify the router configuration and rebuild the static assets.",
+      "priority": "low",
+      "user_email": "mario@netninja.dev"
+    },
+    {
+      "id": "2",
+      "title": "Add new stylesheet for Crystal Report templates",
+      "body": "The current Crystal Report templates lack consistent formatting across modules. Please add a new CSS-based style guide and update the report export layout (especially for Purchase Orders and Goods Receipt reports).",
+      "priority": "medium",
+      "user_email": "peach@example.com"
+    },
+    {
+      "id": "3",
+      "title": "Create dashboard widget for SAP B1 connection uptime",
+      "body": "We need a monitoring widget on the admin dashboard to display SAP Business One DI API connection uptime and average response latency. Data should be pulled every 10 minutes and cached for performance.",
+      "priority": "high",
+      "user_email": "link@hyrule.dev"
+    },
+    {
+      "id": "4",
+      "title": "Resolve 500 error on Ticket Details API endpoint",
+      "body": "Users are reporting HTTP 500 errors when viewing ticket details in the HelpDesk app. Stack trace shows a NullPointerException in the TicketServiceImpl (Spring Boot). Possibly caused by missing entity mapping between Ticket and User entities. Logs attached.",
+      "priority": "high",
+      "user_email": "zelda@castle.example"
+    },
+    {
+      "id": "5",
+      "title": "Fix navbar padding issue on mobile view",
+      "body": "The mobile navbar layout overlaps with the header text after the latest Tailwind update. Adjust padding/margin values for screens smaller than 768px. Please verify using Chrome DevTools responsive mode.",
+      "priority": "low",
+      "user_email": "samus@sr388.example"
+    },
+    {
+      "id": "6",
+      "title": "Accessibility improvements for login and reports pages",
+      "body": "Perform a full accessibility pass: add proper ARIA labels to input fields and ensure focus rings are visible on tab navigation. Also verify that Crystal Report exports are properly tagged for screen readers.",
+      "priority": "medium",
+      "user_email": "ada@lovelace.example"
+    },
+    {
+      "id": "7",
+      "title": "Migrate ticket listing to Next.js server components",
+      "body": "The ticket list currently renders via client-side fetching, causing slow load times. Refactor the page to use Next.js server components with SWR for revalidation. API should be refactored to support SSR-safe JSON responses.",
+      "priority": "medium",
+      "user_email": "dev@dojohelpdesk.local"
+    },
+    {
+      "id": "8",
+      "title": "Add unit tests for ticket filtering logic",
+      "body": "The filter function for tickets (by priority and status) has no unit test coverage. Add Jest tests to validate combinations and ensure that 'high' priority sorting works as expected. Include mocks for pagination and search inputs.",
+      "priority": "low",
+      "user_email": "qa@dojohelpdesk.local"
+    },
+    {
+      "id": "9",
+      "title": "Rate limit Ticket Creation API to prevent spam",
+      "body": "We’re experiencing high load from repeated API calls to POST /api/tickets. Implement rate limiting using a Redis-based counter (max 10 requests/min per IP). This will prevent abuse and improve API reliability.",
+      "priority": "high",
+      "user_email": "ops@dojohelpdesk.local"
+    },
+    {
+      "id": "10",
+      "title": "Refine dark mode theming and component consistency",
+      "body": "In dark mode, text contrast is inconsistent across cards and modals. Adjust Tailwind color tokens for better accessibility and sync theme settings between Flowbite and shadcn/ui components. Verify both dashboard and reports pages.",
+      "priority": "medium",
+      "user_email": "ux@dojohelpdesk.local"
+    }
+  ]
+}
