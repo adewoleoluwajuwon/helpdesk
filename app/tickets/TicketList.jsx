@@ -5,6 +5,18 @@ import { Card, Badge, Spinner } from "flowbite-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
+// export async function generateStaticParams() {
+//   const res = await fetch(
+//     "https://my-json-server.typicode.com/adewoleoluwajuwon/helpdesk-data/tickets"
+//   );
+
+//   const tickets = await res.json();
+
+//   return tickets.map((ticket) => ({
+//     id: tickets.id,
+//   }));
+// }
+
 export default function TicketList() {
   const [tickets, setTickets] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -13,9 +25,12 @@ export default function TicketList() {
   useEffect(() => {
     async function fetchTickets() {
       try {
-        const res = await fetch("http://localhost:4000/tickets", {
-          next: { revalidate: 30 },
-        });
+        const res = await fetch(
+          "https://my-json-server.typicode.com/adewoleoluwajuwon/helpdesk-data/tickets",
+          {
+            next: { revalidate: 30 },
+          }
+        );
 
         if (!res.ok) throw new Error("Failed to fetch tickets");
         const data = await res.json();

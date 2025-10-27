@@ -2,9 +2,13 @@ import React from "react";
 import AnimatedTicketCard from "./TicketCard"; // 👈 Client Component below
 
 async function getTicket(id) {
-  const res = await fetch("http://localhost:4000/tickets/" + id, {
-    next: { revalidate: 60 },
-  });
+  const res = await fetch(
+    "https://my-json-server.typicode.com/adewoleoluwajuwon/helpdesk-data/tickets/" +
+      id,
+    {
+      next: { revalidate: 60 },
+    }
+  );
   if (!res.ok) throw new Error("Failed to fetch ticket");
   return res.json();
 }
