@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Card } from "flowbite-react";
 import {
   BarChart,
@@ -13,7 +14,6 @@ import {
 } from "recharts";
 
 export default function Dashboard() {
-  // Sample data
   const stats = [
     { label: "Open Tickets", value: 42, color: "bg-blue-500" },
     { label: "Pending Tickets", value: 18, color: "bg-yellow-400" },
@@ -58,17 +58,43 @@ export default function Dashboard() {
           </h2>
         </div>
         <nav className="p-4 space-y-2">
-          {["Dashboard", "Tickets", "Agents", "Reports", "Settings"].map(
-            (item) => (
-              <a
-                key={item}
-                href="#"
-                className="block px-3 py-2 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600"
-              >
-                {item}
-              </a>
-            )
-          )}
+          <Link
+            href="/dashboard"
+            className="block px-3 py-2 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600"
+          >
+            Dashboard
+          </Link>
+          <Link
+            href="/tickets"
+            className="block px-3 py-2 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600"
+          >
+            Tickets
+          </Link>
+          {/* ✅ New Ticket link inside sidebar */}
+          <Link
+            href="/tickets/create"
+            className="block px-3 py-2 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600"
+          >
+            ➕ New Ticket
+          </Link>
+          <a
+            href="#"
+            className="block px-3 py-2 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600"
+          >
+            Agents
+          </a>
+          <a
+            href="#"
+            className="block px-3 py-2 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600"
+          >
+            Reports
+          </a>
+          <a
+            href="#"
+            className="block px-3 py-2 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600"
+          >
+            Settings
+          </a>
         </nav>
       </aside>
 
@@ -79,9 +105,13 @@ export default function Dashboard() {
           <h1 className="text-2xl font-bold text-gray-800 dark:text-white">
             Dashboard
           </h1>
-          <button className="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">
+          {/* ✅ Header Button that links to Create Ticket */}
+          <Link
+            href="/tickets/create"
+            className="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition-all"
+          >
             + New Ticket
-          </button>
+          </Link>
         </div>
 
         {/* Stats Cards */}
